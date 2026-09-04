@@ -14,7 +14,7 @@ from policy import ALLOWED_R
 
 
 def add_lags(df: pd.DataFrame, col: str, lags: List[int]) -> pd.DataFrame:
-    """Значения col на L кадров назад (сдвиг по времени, без утечки будущего)."""
+    """Значения col на L кадров назад (сдвиг по времени)."""
     for lag in lags:
         df[f"{col}_lag{lag}"] = df[col].shift(lag)
     return df
